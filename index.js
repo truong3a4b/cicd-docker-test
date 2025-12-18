@@ -16,7 +16,7 @@ mongoose
   .connect(
     "mongodb+srv://20225420:20225420@20225420.1nnou8l.mongodb.net/it4409?retryWrites=true&w=majority&appName=20225420"
   )
-  .then(() => console.log("Connected to MongoDB"))
+  .then(() => console.log("Connected to MongoDB fgf"))
   .catch((err) => console.error("MongoDB Error:", err));
 
 // TODO: Tạo Schema
