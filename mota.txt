@@ -1,0 +1,25 @@
+Backend
+Create: tuổi là số nguyên, email duy nhất
+if (!Number.isInteger(age)) {
+      return res.status(400).json({ error: "Tuổi phải là số nguyên" });
+    }
+Get:  Sử dụng Promise.all cho truy vấn song song (find và countDocument)
+    const [users, total] = await Promise.all([
+      User.find(filter).skip(skip).limit(limit),
+      User.countDocuments(filter),
+    ]);
+
+
+Frontend
+Số thứ tự tăng theo page, thay vì bắt đầu lại ở mỗi page
+React.useEffect(() => {
+          setPage(1); // Reset về trang 1 khi thay đổi search hoặc limit
+        }, [limit]);
+
+Chuẩn hóa dữ liệu đầu vào trước khi gửi Backend (loại bỏ khoảng trắng)
+ const newData = {
+            name: formData.name.trim(),
+            age: Number(formData.age),
+            email: formData.email.trim(),
+            address: formData.address.trim() || undefined,
+          };
